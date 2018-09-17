@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Genes interacting with AKT2</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<!-- Copyright (c) 2018  Egon Willighagen <egon.willighagen@maastrichtuniversity.nl>
+     MIT license -->
+
+  <!-- ops.js and depedencies -->
+  <script type="text/javascript" src="https://egonw.github.io/pils/lib/purl.js"></script>
+  <script type="text/javascript" src="https://egonw.github.io/pils/lib/jquery-1.9.1.min.js"></script>
+  <script type="text/javascript" src="https://egonw.github.io/pils/src/combined.js"></script>
+
+</head>
+
+<body>
+  <h3>Gene</h3>
+  <div id="uri"></div>
+  <p>
+  <table>
+    <thead>
+      <tr>
+        <td><b>Interaction Gene</b></td>
+        <td><b>Database</b></td>
+        <td><b>Number of Interaction</b></td>
+      </tr>
+    </thead>
+    <tbody id="list">
+    </tbody>
+  </table>
+  </p>
+
+  <!-- dynamically create a table with type information -->
+  <script type="text/javascript">
+  
+  var queryGene = 'http://identifiers.org/ensembl/ENSG00000105221'
+  document.getElementById("uri").innerText = "Query: " + queryGene
+
+  var pathwayService = new PathwaySearch(
+    "https://beta.openphacts.org/2.1", "91f5d4d0", "1af5086da757e57c553bfa1351708d5f"
+  );
+
+  // results return asynchronously from the pathwayService.getInteractionsByEntity()
+  // call and are handled by the method
+  var handleInteractingGenes = function(success, status, interactionData) {
+    // if success = true and HTTP code = 200
+    if (success && status == 200) {
+      // the items field in the returned data is a list, each item in the list
+      // being one interaction
+      var itemCount = interactionData.items.length;
+      for (var i = 0; i < itemCount; i++) {
+        var interaction = interactionData.items[i]
+        // the query gene can be both source and target, but we do not know which: try both
+        if (interaction.source._about != queryGene) otherGeneURI = interaction.source._about
+        if (interaction.target._about != queryGene) otherGeneURI = interaction.target._about
+        
+        // extract the database from the URI
+        var database = otherGeneURI.split("/")[3]
+        
+        // extract the identifier from the URI
+        var otherGene = otherGeneURI.split("/")[4]
+        
+        // create the HTML table content
+        var rowNode = document.createElement("tr"); // tr = table row
+        var otherDatabase = document.createElement("td"); // td = table cell
+        var otherNode = document.createElement("td");
+        if (!(uniqueGenes.includes(otherGene))) {
+          otherNode.innerText = otherGene
+          otherDatabase.innerText = database
+          rowNode.appendChild(otherNode)
+          rowNode.appendChild(otherDatabase)
+          // add the new HTML row to the HTML table body (with id="list", see HTML above)
+          document.getElementById("list").appendChild(rowNode);
+        }
+      }
+    }
+  };
+
+  // this makes the search for interactions for the given query gene
+  pathwayService.getInteractionsByEntity(
+    queryGene, null, null, null, 0, 1000, null,
+    handleInteractingGenes
+  );
+  </script>
+</body>
+</html>
+

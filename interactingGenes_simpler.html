@@ -23,7 +23,6 @@
       <tr>
         <td><b>Interaction Gene</b></td>
         <td><b>Database</b></td>
-        <td><b>Number of Interaction</b></td>
       </tr>
     </thead>
     <tbody id="list">
@@ -65,14 +64,13 @@
         var rowNode = document.createElement("tr"); // tr = table row
         var otherDatabase = document.createElement("td"); // td = table cell
         var otherNode = document.createElement("td");
-        if (!(uniqueGenes.includes(otherGene))) {
-          otherNode.innerText = otherGene
-          otherDatabase.innerText = database
-          rowNode.appendChild(otherNode)
-          rowNode.appendChild(otherDatabase)
-          // add the new HTML row to the HTML table body (with id="list", see HTML above)
-          document.getElementById("list").appendChild(rowNode);
-        }
+        otherNode.innerText = otherGene
+        otherDatabase.innerText = database
+        rowNode.appendChild(otherNode)
+        rowNode.appendChild(otherDatabase)
+        
+        // add the new HTML row to the HTML table body (with id="list", see HTML above)
+        document.getElementById("list").appendChild(rowNode);
       }
     }
   };

@@ -1,5 +1,5 @@
 # Scientific Programming
-Course about scientific programming.
+Course about scientific programming, from algorithm to implementation.
 
 ## Course Description
 

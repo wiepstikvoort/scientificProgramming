@@ -1,0 +1,94 @@
+---
+title: "Descriptor Calculation"
+author: "Egon"
+date: "24 september 2018"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(rcdk)
+```
+
+# Descriptor Calculation with the RCDK
+
+First we read the compounds into a table:
+
+```{r}
+assayData = read.table(
+  file='/home/egonw/bioclipse-workspace/MSB1015/aid624202.csv',
+  sep=',', header=TRUE, skip=5
+)
+```
+
+We are only interested only in some of the columns with the PubChem Substance ID ("X") and
+the PubChem Activity Score ("X.3").
+
+```{r}
+qsarData = assayData[,c("X","X.3")]
+colnames(qsarData) = c("SID","Score")
+```
+
+Many compounds are inactive, i.e. have a zero score:
+
+```{r}
+inactives = which(qsarData[,"Score"] == 0)
+actives = which(qsarData[,"Score"] != 0)
+length(inactives)
+```
+
+But we a more balanced data set and will force this by selecting about 700 actives and about
+350 inactives:
+
+```{r}
+selectedInactives = sample(inactives, 350)
+selectedActives = sample(actives, 700)
+qsarSmallData = rbind(qsarData[selectedActives,], qsarData[selectedInactives,])
+```
+
+Next, we will process the Structure Data File (SDF) with all the chemical structures and
+calculate descriptors for the selected compounds. For this we will use the `rcdk` package
+and an iterating reader, so that we do not clog memory:
+
+```{r}
+selectedSusbtanceIDs = qsarSmallData[,"SID"]
+iter <- iload.molecules('/home/egonw/bioclipse-workspace/MSB1015/aid624202.sdf', type='sdf')
+pb <- txtProgressBar(min = 0, max = 377550, style = 3)
+molsDone = 0
+hitsFound = 0
+mols = list()
+while(hasNext(iter)) {
+  mol <- nextElem(iter)
+  sdfSID = get.property(mol, "PUBCHEM_SUBSTANCE_ID")
+  if (sdfSID %in% selectedSusbtanceIDs) {
+    hitsFound = hitsFound + 1
+    mols[[hitsFound]] = mol
+  }
+  molsDone = molsDone + 1
+  setTxtProgressBar(pb, molsDone)
+}
+close(pb)
+```
+
+Now it's time to calculate descriptors for these 1050 compounds. We first define the list
+of descriptors we want to calculate:
+
+```{r}
+descNames <- unique(unlist(sapply(get.desc.categories()[2:4], get.desc.names)))
+```
+
+And then calculate the descriptors for all compounds:
+
+```{r}
+descs <- eval.desc(mols, descNames, verbose = TRUE)
+class(descs)
+```
+
+Let's write the descriptors to a CSV file, but we want :
+
+```{r}
+molSIDs = unlist(lapply(mols, function(x) { get.property(x, "PUBCHEM_SUBSTANCE_ID")} ))
+write.csv(cbind(molSIDs, descs), file = "/home/egonw/bioclipse-workspace/MSB1015/descriptors.csv")
+```
+
+That's it for today.

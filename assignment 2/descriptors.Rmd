@@ -7,7 +7,14 @@ output: html_document
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
-library(itertools)
+```
+
+To make sure `rcdk` has enough memory, we can increase the heap space with an extra `options()` command. Make
+sure the amount of heap space you allocate is not larger than the amount of physical memory your machine has (`8g` is 8 GB, which will be fine if your machine has 16 GB of memory):
+
+```
+options(java.parameters = "-Xmx8g")
+library(itertools) # for proper nextElem() support
 library(rcdk)
 ```
 

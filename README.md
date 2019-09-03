@@ -26,3 +26,23 @@ interactive notebooks.
 6. Explain algorithms and implementations in software in appropriate
    documentation
 
+## Topics
+
+- Week 1: GitHub
+- Week 2,3: Server-Client Interaction
+- Week 4,5: Making multivariate statistics reproducible
+- Week 6,7: Parallel computing
+
+## Assignments
+
+### Assignment 1: Server-Client Interaction
+
+Programming languages and file formats used: HTML, JavaScript, REST API, SPARQL, JSON
+
+### Assignment 2: Making multivariate statistics reproducible
+
+Programming languages and file formats used: R, Markdown, multivariate statistics
+
+### Assignment 3: Parallel computing
+
+Programming languages and file formats used: Nextflow, Groovy, cheminformatics

@@ -73,6 +73,7 @@ Lecture 2 discusses these topics:
 Practical 1 material:
 
 * [Open Science MOOC](https://opensciencemooc.eu/): [Task 1: How to set up a repository on GitHub](https://github.com/OpenScienceMOOC/Module-5-Open-Research-Software-and-Open-Source/blob/master/content_development/Task_1.md)
+* [Markdown for common license](https://github.com/IQAndreas/markdown-licenses)
 
 Practical 2 ...
 

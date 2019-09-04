@@ -28,21 +28,90 @@ interactive notebooks.
 
 ## Topics
 
-- Week 1: GitHub
-- Week 2,3: Server-Client Interaction
-- Week 4,5: Making multivariate statistics reproducible
-- Week 6,7: Parallel computing
+Week 1 provides a lecture introducing the course, and the practical
+is a GitHub 101 (students are free to use GitLab or another alternative).
 
-## Assignments
+1. Week 2,3: Server-Client Interaction
+2. Week 4,5: Making multivariate statistics reproducible
+3. Week 6,7: Parallel computing
 
-### Assignment 1: Server-Client Interaction
+### Introduction (week 1)
+
+#### Lecture
+
+The lectures outlines the format of the course, topics, assessment,
+and grading.
+
+#### Practical
+
+* making a GitHub account (or GitLab)
+* creating a repository (private or public)
+* creating files
+* writing commit messages
+* adding all required files (LICENSE, AUTHORS, README, etc)
+* making a tag and matching release (with release notes)
+
+### Server-Client Interaction
+
+#### Lectures
+
+Lecture 1 discusses these topics:
+
+* application programming interfaces (APIs)
+* history of web APIs: SOAP, XMPP, REST
+* synchronous versus asynchronous API calls
+* the JavaScript + HTML powerhouse
+* Wikidata and SPARQL
+
+Lecture 2 discusses these topics:
+
+* JSON format
+* d3.js
+
+#### Practicals
+
+Practical 1 material:
+
+* [Open Science MOOC](https://opensciencemooc.eu/): [Task 1: How to set up a repository on GitHub](https://github.com/OpenScienceMOOC/Module-5-Open-Research-Software-and-Open-Source/blob/master/content_development/Task_1.md)
+
+Practical 2 ...
+
+#### Assignment 1
 
 Programming languages and file formats used: HTML, JavaScript, REST API, SPARQL, JSON
 
-### Assignment 2: Making multivariate statistics reproducible
+### Making multivariate statistics reproducible
+
+#### Lectures
+
+Lecture 1 discusses these topics:
+
+Lecture 2 discusses these topics:
+
+#### Practicals
+
+Practical 1 ...
+
+Practical 2 ...
+
+#### Assignment 2
 
 Programming languages and file formats used: R, Markdown, multivariate statistics
 
-### Assignment 3: Parallel computing
+### Parallel computing
 
-Programming languages and file formats used: Nextflow, Groovy, cheminformatics
+#### Lectures
+
+Lecture 1 discusses these topics:
+
+Lecture 2 discusses these topics:
+
+#### Practicals
+
+Practical 1 ...
+
+Practical 2 ...
+
+#### Assignment 3
+
+Programming languages and file formats used: Nextflow, Groovy

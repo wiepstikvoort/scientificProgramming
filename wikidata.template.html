@@ -1,12 +1,12 @@
 <html>
 <head>
-  <script src="https://cdn.rawgit.com/maxlath/wikidata-sdk/master/dist/wikidata-sdk.js"></script>
+  <script src="js/wikidata-sdk.js"></script>
 </head>
 
 <body>
   <pre id="output"></pre>
   <script>
-    query = "SELECT ?compound ?cas WHERE { ?compound wdt:P231 ?cas }"
+    query = "SELECT ?compound ?cas WHERE { ?compound wdt:P231 ?cas } limit 10"
 
     fetch(
       wdk.sparqlQuery(query)

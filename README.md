@@ -77,10 +77,19 @@ Lecture 2 discusses these topics:
 
 Practical 1 has the following aspects as main topic:
 
-* look at the Wikidata Query Service and learn from the examples
-* set up a GitHub repository for the first assignment (with authors, license, and install/readme instructions)
-* use the two JavaScript examples to create a simple, running HTML example that runs a simple SPARQL query
+* look at the [Wikidata Query Service](https://query.wikidata.org/) and learn from the examples (click the `Examples` button)
+* set up a GitHub repository for the first assignment (see the practical of Week 1)
+* use the two JavaScript examples ([htmljs.template.html](htmljs.template.html) and [wikidata.template.html](wikidata.template.html)) to create a simple, running HTML example that runs a simple SPARQL query
 * learn how to use the web browser console
+
+Additional resources:
+
+* [Programming in the Life Sciences #4: communication from within HTML](https://chem-bla-ics.blogspot.com/2013/10/programming-in-life-sciences-4.html)
+* [Programming in the Life Sciences #5: converting the results into HTML](https://chem-bla-ics.blogspot.com/2013/10/programming-in-life-sciences-5.html)
+* [Programming in the Life Sciences #10: JavaScript Object Notation (JSON)](https://chem-bla-ics.blogspot.com/2013/10/programming-in-life-sciences-10.html)
+* [Programming in the Life Sciences #11: HTML](https://chem-bla-ics.blogspot.com/2013/10/programming-in-life-sciences-11-html.html)
+* [Programming in the Life Sciences #19: debugging](https://chem-bla-ics.blogspot.com/2014/11/programming-in-life-sciences-19.html)
+* [Programming in the Life Sciences #20: extracting data from JSON](https://chem-bla-ics.blogspot.com/2014/11/programming-in-life-sciences-20.html)
 
 Practical 2 ...
 

@@ -51,6 +51,11 @@ and grading.
 * adding all required files (LICENSE, AUTHORS, README, etc)
 * making a tag and matching release (with release notes)
 
+##### Additional resources
+
+* [Open Science MOOC](https://opensciencemooc.eu/): [Task 1: How to set up a repository on GitHub](https://github.com/OpenScienceMOOC/Module-5-Open-Research-Software-and-Open-Source/blob/master/content_development/Task_1.md)
+* [Markdown for common license](https://github.com/IQAndreas/markdown-licenses)
+
 ### Server-Client Interaction
 
 #### Lectures
@@ -70,10 +75,12 @@ Lecture 2 discusses these topics:
 
 #### Practicals
 
-Practical 1 material:
+Practical 1 has the following aspects as main topic:
 
-* [Open Science MOOC](https://opensciencemooc.eu/): [Task 1: How to set up a repository on GitHub](https://github.com/OpenScienceMOOC/Module-5-Open-Research-Software-and-Open-Source/blob/master/content_development/Task_1.md)
-* [Markdown for common license](https://github.com/IQAndreas/markdown-licenses)
+* look at the Wikidata Query Service and learn from the examples
+* set up a GitHub repository for the first assignment (with authors, license, and install/readme instructions)
+* use the two JavaScript examples to create a simple, running HTML example that runs a simple SPARQL query
+* learn how to use the web browser console
 
 Practical 2 ...
 

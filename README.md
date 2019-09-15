@@ -82,6 +82,13 @@ Practical 1 has the following aspects as main topic:
 * use the two JavaScript examples ([htmljs.template.html](htmljs.template.html) and [wikidata.template.html](wikidata.template.html)) to create a simple, running HTML example that runs a simple SPARQL query
 * learn how to use the web browser console
 
+##### Javascript Library
+
+Wikibase SDK javascript library is used in the template file [wikidata.template.html](wikidata.template.html)
+as a dependency to provide the functionality of executing a SPARQL query over WikiData SPARQL endpoint and retrieve the data
+as json in the browser.
+Wikibase SDK library is released under MIT License. For additional information, plase visit <https://github.com/maxlath/wikibase-sdk> repository.
+
 Additional resources:
 
 * [Programming in the Life Sciences #4: communication from within HTML](https://chem-bla-ics.blogspot.com/2013/10/programming-in-life-sciences-4.html)

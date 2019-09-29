@@ -110,7 +110,15 @@ Programming languages and file formats used: HTML, JavaScript, REST API, SPARQL,
 
 Lecture 1 discusses these topics:
 
+* boiling points of alkanes
+* the concept of QSAR
+* molecular descriptors (and rcdk)
+* Partial Least Squares
+* R Markdown
+
 Lecture 2 discusses these topics:
+
+* 
 
 #### Practicals
 

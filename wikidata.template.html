@@ -10,18 +10,15 @@
   <pre id="output"></pre>
 	
   <script>
-  
-  
     query = "SELECT ?compound ?cas WHERE { ?compound wdt:P231 ?cas } limit 10"
+    const url = wdk.sparqlQuery(query)
 
-    fetch(
-      wdk.sparqlQuery(query)
+    fetch( url
     ).then( response => response.json()
     ).then( wdk.simplify.sparqlResults
-    ).then(
-      function (response) {
-        document.getElementById('output').innerHTML =
-          JSON.stringify(response, undefined, 2);
+    ).then( function(simpleResults) {
+      document.getElementById('output').innerHTML =
+        JSON.stringify(simpleResults, undefined, 2);
       }
     )
   </script>

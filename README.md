@@ -89,7 +89,7 @@ as a dependency to provide the functionality of executing a SPARQL query over Wi
 as json in the browser.
 Wikibase SDK library is released under MIT License. For additional information, plase visit <https://github.com/maxlath/wikibase-sdk> repository.
 
-Additional resources:
+##### Additional resources
 
 * [Programming in the Life Sciences #4: communication from within HTML](https://chem-bla-ics.blogspot.com/2013/10/programming-in-life-sciences-4.html)
 * [Programming in the Life Sciences #5: converting the results into HTML](https://chem-bla-ics.blogspot.com/2013/10/programming-in-life-sciences-5.html)
@@ -97,6 +97,7 @@ Additional resources:
 * [Programming in the Life Sciences #11: HTML](https://chem-bla-ics.blogspot.com/2013/10/programming-in-life-sciences-11-html.html)
 * [Programming in the Life Sciences #19: debugging](https://chem-bla-ics.blogspot.com/2014/11/programming-in-life-sciences-19.html)
 * [Programming in the Life Sciences #20: extracting data from JSON](https://chem-bla-ics.blogspot.com/2014/11/programming-in-life-sciences-20.html)
+* [How to learn D3.js](https://wattenberger.com/blog/d3)
 
 Practical 2 ...
 

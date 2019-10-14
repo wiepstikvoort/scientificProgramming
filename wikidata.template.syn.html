@@ -8,18 +8,19 @@
 
 <body>
   <pre id="output"></pre>
-	
   <script>
-    query = "SELECT ?compound ?cas WHERE { ?compound wdt:P231 ?cas } limit 10"
+    query = "SELECT ?compound ?cas WHERE { ?compound wdt:P231 ?cas } LIMIT 10"
     const url = wdk.sparqlQuery(query)
 
-    fetch( url
-    ).then( response => response.json()
-    ).then( wdk.simplify.sparqlResults
-    ).then( function(simpleResults) {
+    async function main () {
+      const response = await fetch(url)
+      const results = await response.json()
+      const simpleResults = wdk.simplify.sparqlResults(results)
+
       document.getElementById('output').innerHTML =
         JSON.stringify(simpleResults, undefined, 2);
-      }
-    )
+    }
+
+    main()
   </script>
 </body>
